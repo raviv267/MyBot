@@ -38,6 +38,18 @@ async def ping(ctx):
     em = discord.Embed(color=color, title='Pong! My latency is:')
     em.description = f"{bot.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
+
+@Client.event
+async def on_member join(member):
+serverchannel = member.server.default_channnel
+msg = "Welcome aboard :) {0} auf {1} ".format(member.mention, member.server.name)
+await client.send_message(serverchannel, msg)
+
+@Client.event
+async def on_member_remove(member):
+aserverchannel = member.server.default_channel
+msg = "Bye bye {0}".format(member.mention)
+await client.send_message(serverchannel, msg)
     
     
 @bot.command()
@@ -134,6 +146,7 @@ async def _eval(ctx, *, body):
         await ctx.message.add_reaction('\u2049')  # x
     else:
         await ctx.message.add_reaction('\u2705')
+
     
   
 bot.run(os.environ.get('TOKEN'))

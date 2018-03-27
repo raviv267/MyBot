@@ -29,6 +29,21 @@ def dev_check(id):
 async def on_ready():
     print('Bot is online!')
     await bot.change_presence(activity=discord.Game(name=f".help | Made by Ghost"))
+
+    
+@bot.event
+async def on_member_join(member):
+    serverchannel = bot.get_channel(425376875553226753)
+    msg = f"Welcome aboard, {member.mention} to **{member.guild.name}**! :)"
+    await serverchannel.send_message(msg)
+
+    
+
+@bot.event
+async def on_member_remove(member):
+    serverchannel = bot.get_channel(425376875553226753)
+    msg = f"Bye Bye {member.mention}
+    await serverchannel.send_message(msg)
     
     
 @bot.command()
@@ -39,17 +54,8 @@ async def ping(ctx):
     em.description = f"{bot.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
 
-@Client.event
-async def on_member join(member):
-serverchannel = member.server.default_channnel
-msg = "Welcome aboard :) {0} auf {1} ".format(member.mention, member.server.name)
-await client.send_message(serverchannel, msg)
 
-@Client.event
-async def on_member_remove(member):
-aserverchannel = member.server.default_channel
-msg = "Bye bye {0}".format(member.mention)
-await client.send_message(serverchannel, msg)
+
     
     
 @bot.command()

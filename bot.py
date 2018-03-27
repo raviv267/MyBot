@@ -29,7 +29,10 @@ async def invite(ctx):
 @bot.command()
 async def say(ctx, *, message: str):
     '''You say it. Then I say it.'''
-    await ctx.message.delete()
+    try:
+        await ctx.message.delete()
+    except discord.Forbidden:
+        pass
     await ctx.send(message)  
     
   

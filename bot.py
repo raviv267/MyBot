@@ -67,7 +67,6 @@ async def _eval(ctx, *, body):
         'author': ctx.author,
         'guild': ctx.guild,
         'message': ctx.message,
-        '_': bot._last_result,
     }
 
     env.update(globals())

@@ -3,12 +3,12 @@ import sys
 import os
 from discord.ext import commands
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('.'),description="Ghost's new Discord bot! \n\nHelp Commands:",owner_id=231028316843278346)
-
+bot.load_extension("cogs.developer")
 
 @bot.event
 async def on_ready():
     print('Bot is online!')
-    await bot.change_presence(game=discord.Game(name=f".help | Made by Ghost"))
+    await bot.change_presence(activity=discord.Game(name=f".help | Made by Ghost"))
     
     
 @bot.command()
@@ -31,6 +31,6 @@ async def say(ctx, *, message: str):
     '''You say it. Then I say it.'''
     await ctx.message.delete()
     await ctx.send(message)  
-
     
+  
 bot.run(os.environ.get('TOKEN'))

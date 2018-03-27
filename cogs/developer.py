@@ -2,3 +2,24 @@ import discord
 from discord.ext import commands
 
 
+class Developer:
+    def __init__(self, bot):
+        self.bot = bot
+        
+        
+    def dev_check(self, id):
+       if id == 277981712989028353 or id == 231028316843278346:
+           return True
+       return False
+
+
+    @commands.command()
+    async def changename(self, ctx, *, name=None):
+        if not self.dev_check(ctx.author.id):
+            return await ctx.send("Sorry, but this command is for devs only. ¯\_(ツ)_/¯")
+        await self.bot.user.edit(username=name)
+        await ctx.send(f"My name is now changed to: **{name}**")
+        
+        
+def setup(bot): 
+    bot.add_cog(Developer(bot))  

@@ -71,7 +71,6 @@ async def _eval(ctx, *, body):
 
     env.update(globals())
 
-    body = cleanup_code(body)
     stdout = io.StringIO()
     err = out = None
 

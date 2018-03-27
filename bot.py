@@ -42,7 +42,7 @@ async def on_member_join(member):
 @bot.event
 async def on_member_remove(member):
     serverchannel = bot.get_channel(425376875553226753)
-    msg = f"Bye Bye {member.mention}
+    msg = f"Bye Bye {member.mention}"
     await serverchannel.send_message(msg)
     
     

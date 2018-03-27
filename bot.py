@@ -18,6 +18,13 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('.'),description="Ghost's new Discord bot! \n\nHelp Commands:",owner_id=231028316843278346)
 bot.load_extension("cogs.developer")
 
+
+def dev_check(id):
+    if id == 277981712989028353 or id == 231028316843278346:
+        return True
+    return False
+
+
 @bot.event
 async def on_ready():
     print('Bot is online!')

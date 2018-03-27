@@ -19,7 +19,15 @@ class Developer:
             return await ctx.send("Sorry, but this command is for devs only. ¯\_(ツ)_/¯")
         await self.bot.user.edit(username=name)
         await ctx.send(f"My name is now changed to: **{name}**")
+
         
+
+    @commands.command()
+    async def restart(self, ctx):
+        if not self.dev_check(ctx.author.id):
+            return await ctx.send("Sorry, but this command is for devs only. ¯\_(ツ)_/¯")
+        await ctx.send("Turning off...Till next time!")
+        await self.bot.logout()
         
 def setup(bot): 
     bot.add_cog(Developer(bot))  

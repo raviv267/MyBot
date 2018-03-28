@@ -76,7 +76,19 @@ async def invite(ctx):
     """Invite me to your server. I'll be fun."""
     await ctx.send("Yay! thanks for adding me! -> https://discordapp.com/oauth2/authorize?client_id=428310138890223646&scope=bot&permissions=8")
 
- 
+    
+    
+@bot.command()
+async def kill(ctx, user: discord.Member = None):
+    """Kill someone. DIE!"""
+    if user is None:
+        msg = await ctx.send("Didn't enter anyone, so guess I'm coming for you. :dagger:")
+        await asyncio.sleep(3)
+        await msg.edit(content=f"Swoooooosh. **{ctx.author.name}** died. :skull_crossbones:")
+    else:
+        msg = await ctx.send(f"{user.mention}, I'm coming for you. :dagger:")
+        await asyncio.sleep(3)
+        await msg.edit(content=f"Swoooooosh. **{user.name}** died to **{ctx.author.name}. :skull_crossbones:")
     
     
 @bot.command(name='eval', hidden=True)

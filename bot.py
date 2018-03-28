@@ -122,7 +122,7 @@ async def insult(ctx, user: discord.Member = None):
     if user is None:
         await ctx.send("Who are you insulting? Me? :thinking:")
     else:
-        insults = ['fuck you', 'go suck my dick', 'suck my dick', 'fucking gay', 'fuck off', 'can you fuck off already?', 'fu, smd', 'hope you die']
+        insults = ['fuck you', 'go suck my dick', 'suck my dick', 'fucking gay', 'you little bitch', 'can you fuck off already?', 'fu, smd', 'hope you die']
         await ctx.send(f"{user.mention}, {random.choice(insults)}")
         
     

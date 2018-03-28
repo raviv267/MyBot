@@ -92,16 +92,21 @@ async def invite(ctx):
 @bot.command()
 async def dogmeme(ctx):
     """Make a dog meme with this awesome command!"""
-    await ctx.send("Please enter the text you want on the top half of the meme.")
+    one = await ctx.send("Please enter the text you want on the top half of the meme.")
     try:
         x = await bot.wait_for("message", check=lambda x: x.channel == ctx.channel and x.author == ctx.author, timeout=60.0)
     except asyncio.TimeoutError:
         return await ctx.send("Request timed out. Please try again.")
-    await ctx.send("Great! Now enter the text you want on the bottom half of the meme.")
+    two = await ctx.send("Great! Now enter the text you want on the bottom half of the meme.")
     try:
         f = await bot.wait_for("message", check=lambda f: f.channel == ctx.channel and f.author == ctx.author, timeout=60.0)
     except asyncio.TimeoutError:
         return await ctx.send("Request timed out. Please try again.")
+    await ctx.message.delete()
+    await one.delete()
+    await x.delete()
+    await two.delete()
+    await f.delete()
     em = discord.Embed(color=discord.Color(value=0x00ff00), title="Done my magic! Here's your dank meme.")
     em.set_image(url=f"https://memegen.link/doge/{x.content.replace(' ', '_')}/{f.content.replace(' ', '_')}.jpg")
     await ctx.send(embed=em)
@@ -109,6 +114,10 @@ async def dogmeme(ctx):
     
 @bot.command()
 async def insult(ctx, user: discord.Member = None):
+    try:
+        await ctx.message.delete()
+    except discord.Forbidden:
+        pass
     if user is None:
         await ctx.send("Who are you insulting? Me? :thinking:")
     else:

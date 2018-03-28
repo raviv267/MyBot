@@ -35,7 +35,7 @@ async def on_ready():
 async def on_member_join(member):
     serverchannel = bot.get_channel(425376875553226753)
     msg = f"Welcome aboard, {member.mention} to **{member.guild.name}**! :)"
-    await serverchannel.send_message(msg)
+    await serverchannel.send(msg)
 
     
 
@@ -43,7 +43,7 @@ async def on_member_join(member):
 async def on_member_remove(member):
     serverchannel = bot.get_channel(425376875553226753)
     msg = f"Bye Bye {member.mention}"
-    await serverchannel.send_message(msg)
+    await serverchannel.send(msg)
     
     
 @bot.command()

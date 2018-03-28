@@ -41,7 +41,7 @@ async def on_message(message):
             await ctx.send("Hey there! Don't advertise your servers in this one. :thumbsdown:", delete_after=5)
         else:
             pass
-    
+    await bot.process_commands(message)
     
 @bot.event
 async def on_member_join(member):

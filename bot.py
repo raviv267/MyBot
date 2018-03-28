@@ -76,6 +76,22 @@ async def invite(ctx):
     """Invite me to your server. I'll be fun."""
     await ctx.send("Yay! thanks for adding me! -> https://discordapp.com/oauth2/authorize?client_id=428310138890223646&scope=bot&permissions=8")
 
+
+@bot.command()
+async def dogmeme(ctx):
+    """Make a dog meme with this awesome command!"""
+    await ctx.send("Please enter the text you want on the top half of the meme.")
+    try:
+        x = await bot.wait_for("message", check=lambda x: x.channel == ctx.channel and x.author == ctx.author, timeout=60.0)
+    except asyncio.TimeoutError:
+        return await ctx.send("Request timed out. Please try again.")
+    try:
+        f = await bot.wait_for("message", check=lambda f: f.channel == ctx.channel and f.author == ctx.author, timeout=60.0)
+    except asyncio.TimeoutError:
+        return await ctx.send("Request timed out. Please try again.")
+    em = discord.Embed(color=discord.Color(value=0x00ff00), title="Done my magic! Here's your dank meme.")
+    em.set_image(url=f"https://memegen.link/doge/{x.content.replace(' ', '_')}/{f.content.replace(' ', '_')}.jpg")
+    await ctx.send(embed=em)
     
     
 @bot.command()

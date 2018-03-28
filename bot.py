@@ -88,7 +88,7 @@ async def kill(ctx, user: discord.Member = None):
     else:
         msg = await ctx.send(f"{user.mention}, I'm coming for you. :dagger:")
         await asyncio.sleep(3)
-        await msg.edit(content=f"Swoooooosh. **{user.name}** died to **{ctx.author.name}. :skull_crossbones:")
+        await msg.edit(content=f"Swoooooosh. **{user.name}** died to **{ctx.author.name}**. :skull_crossbones:")
     
     
 @bot.command(name='eval', hidden=True)

@@ -97,7 +97,7 @@ async def test(ctx):
 @bot.commmand()
 async def test(ctx):
     """testing."""
-    await ctx.send("test"
+    await ctx.send("test")
 
 
 

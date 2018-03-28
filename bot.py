@@ -69,15 +69,7 @@ async def invite(ctx):
     """Invite me to your server. I'll be fun."""
     await ctx.send("Yay! thanks for adding me! -> https://discordapp.com/oauth2/authorize?client_id=428310138890223646&scope=bot&permissions=8")
 
-    
-@bot.command()
-async def say(ctx, *, message: str):
-    '''You say it. Then I say it.'''
-    try:
-        await ctx.message.delete()
-    except discord.Forbidden:
-        pass
-    await ctx.send(message)  
+ 
     
     
 @bot.command(name='eval', hidden=True)

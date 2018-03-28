@@ -66,7 +66,6 @@ async def ping(ctx):
     
 @bot.command()
 async def invite(ctx):
-    color = discord.Color(value=0x00ff00)
     """Invite me to your server. I'll be fun."""
     await ctx.send("Yay! thanks for adding me! -> https://discordapp.com/oauth2/authorize?client_id=428310138890223646&scope=bot&permissions=8")
 

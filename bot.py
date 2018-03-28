@@ -61,7 +61,14 @@ async def ping(ctx):
     await ctx.send(embed=em)
 
 
-
+@bot.command()
+async def say(ctx, *, message: str):
+    '''You say it. Then I say it.'''
+    try:
+        await ctx.message.delete()
+    except discord.Forbidden:
+        pass
+    await ctx.send(message)  
     
     
 @bot.command()

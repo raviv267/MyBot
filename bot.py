@@ -114,6 +114,7 @@ async def dogmeme(ctx):
     
 @bot.command()
 async def insult(ctx, user: discord.Member = None):
+    """You insult me i insult you!"""
     try:
         await ctx.message.delete()
     except discord.Forbidden:

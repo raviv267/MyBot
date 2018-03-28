@@ -91,7 +91,7 @@ async def invite(ctx):
 
 @bot.commannd()
 async def test(ctx):
-  "i'm testing."""
+  """i'm testing."""
 await ctx.send("working")
 
 

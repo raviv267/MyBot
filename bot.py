@@ -33,17 +33,23 @@ async def on_ready():
     
 @bot.event
 async def on_member_join(member):
-    serverchannel = bot.get_channel(425376875553226753)
-    msg = f"Welcome aboard, {member.mention} to **{member.guild.name}**! :)"
-    await serverchannel.send(msg)
+    if member.guild.id == 403289272548851714:
+        serverchannel = bot.get_channel(425376875553226753)
+        msg = f"Welcome aboard, {member.mention} to **{member.guild.name}**! :)"
+        await serverchannel.send(msg)
+    else:
+        pass
 
     
 
 @bot.event
 async def on_member_remove(member):
-    serverchannel = bot.get_channel(425376875553226753)
-    msg = f"Bye Bye {member.mention}"
-    await serverchannel.send(msg)
+    if member.guild.id == 403289272548851714:
+        serverchannel = bot.get_channel(425376875553226753)
+        msg = f"Bye Bye {member.mention}"
+        await serverchannel.send(msg)
+    else:
+        pass
     
     
 @bot.command()

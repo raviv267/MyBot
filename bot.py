@@ -121,7 +121,7 @@ async def insult(ctx, user: discord.Member = None):
     if user is None:
         await ctx.send("Who are you insulting? Me? :thinking:")
     else:
-        insults = ['fuck you', 'go suck my dick', 'suck my dick', 'fucking hell for fuck sakes fuck off', 'can you fuck off', 'fu, smd']
+        insults = ['fuck you', 'go suck my dick', 'suck my dick', 'fucking gay', 'fuck off', 'can you fuck off already?', 'fu, smd', 'hope you die']
         await ctx.send(f"{user.mention}, {random.choice(insults)}")
         
     
@@ -140,6 +140,7 @@ async def kill(ctx, user: discord.Member = None):
         
 @bot.command(aliases=['8ball'])
 async def eightball(ctx, *, question=None):
+    """True or False?"""
     if question is None:
         await ctx.send("Ask a question to USE 8ball!")
     else:

@@ -89,17 +89,6 @@ async def invite(ctx):
     await ctx.send("Yay! thanks for adding me! -> https://discordapp.com/oauth2/authorize?client_id=428310138890223646&scope=bot&permissions=8")
 
 
-@bot.command()
-async def test(ctx):
-    """testing."""
-    await ctx.send("test")
-
-@bot.commmand()
-async def test(ctx):
-    """testing."""
-    await ctx.send("test")
-
-
 
 @bot.command()
 async def dogmeme(ctx):

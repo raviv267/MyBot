@@ -85,6 +85,7 @@ async def dogmeme(ctx):
         x = await bot.wait_for("message", check=lambda x: x.channel == ctx.channel and x.author == ctx.author, timeout=60.0)
     except asyncio.TimeoutError:
         return await ctx.send("Request timed out. Please try again.")
+    await ctx.send("Great! Now enter the text you want on the bottom half of the meme.")
     try:
         f = await bot.wait_for("message", check=lambda f: f.channel == ctx.channel and f.author == ctx.author, timeout=60.0)
     except asyncio.TimeoutError:

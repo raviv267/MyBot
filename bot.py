@@ -15,7 +15,8 @@ import textwrap
 import inspect
 from contextlib import redirect_stdout
 from discord.ext import commands
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('.'),description="= Command List = \n\nHelp Commands:",owner_id=231028316843278346)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('.'),description="= Command List = \n\n
+[Use .help <commandname> for details]",owner_id=231028316843278346)
 bot.load_extension("cogs.developer")
 
 

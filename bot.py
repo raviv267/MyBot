@@ -105,7 +105,16 @@ async def dogmeme(ctx):
     em = discord.Embed(color=discord.Color(value=0x00ff00), title="Done my magic! Here's your dank meme.")
     em.set_image(url=f"https://memegen.link/doge/{x.content.replace(' ', '_')}/{f.content.replace(' ', '_')}.jpg")
     await ctx.send(embed=em)
+
     
+@bot.command()
+async def insult(ctx, user: discord.Member = None):
+    if user is None:
+        await ctx.send("Who are you insulting? Me? :thinking:")
+    else:
+        insults = ['fuck you', 'go suck my dick', 'suck my dick', 'fucking hell for fuck sakes fuck off', 'can you fuck off', 'f u, ffs']
+        await ctx.send(f"{member.mention}, {random.choice(insults)}")
+        
     
 @bot.command()
 async def kill(ctx, user: discord.Member = None):

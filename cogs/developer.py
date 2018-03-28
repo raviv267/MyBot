@@ -20,18 +20,6 @@ class Developer:
         await self.bot.user.edit(username=name)
         await ctx.send(f"My name is now changed to: **{name}**")
 
-
-@bot.command()
-async def say(ctx, *, message: str):
-    '''You say it. Then I say it.'''
-    try:
-        await ctx.message.delete()
-    except discord.Forbidden:
-        pass
-    await ctx.send(message)  
-        if not self.dev_check(ctx.author.id):
-            return await ctx.send("Sorry, but this command is for devs only. ¯\_(ツ)_/¯")
-
         
 
     @commands.command()

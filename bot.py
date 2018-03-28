@@ -18,6 +18,10 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('.'),description="= Command List ⚠️ = \n\nUse .help <commandname> for deteails:",owner_id=231028316843278346)
 bot.load_extension("cogs.developer")
 
+class User commands:
+    def __init__(self, bot):
+        self.bot = bot
+
 
 def dev_check(id):
     if id == 277981712989028353 or id == 231028316843278346:

@@ -28,7 +28,7 @@ def dev_check(id):
 @bot.event
 async def on_ready():
     print('Bot is online!')
-    await bot.change_presence(activity=discord.Game(name=f".help | Made by Ghost"))
+await client.change_status(game=discord.Game(name="Fun Game", url="twitch.tv/streamer", type=1))
 
     
 @bot.event

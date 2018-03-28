@@ -38,7 +38,7 @@ async def on_message(message):
     else:
         if "https://discord.gg/" in message.content:
             await message.delete()
-            await ctx.send("Hey there! Don't advertise your servers in this one. :thumbsdown:", delete_after=5)
+            await message.channel.send("Hey there! Don't advertise your servers in this one. :thumbsdown:", delete_after=5)
         else:
             pass
     await bot.process_commands(message)

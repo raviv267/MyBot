@@ -89,7 +89,25 @@ async def kill(ctx, user: discord.Member = None):
         msg = await ctx.send(f"{user.mention}, I'm coming for you. :dagger:")
         await asyncio.sleep(3)
         await msg.edit(content=f"Swoooooosh. **{user.name}** died to **{ctx.author.name}**. :skull_crossbones:")
-    
+
+        
+@bot.command(aliases=['8ball'])
+async def eightball(ctx, *, question=None):
+    if question is None:
+        await ctx.send("Ask a question to USE 8ball!")
+    else:
+        choices = ['It is certain. :white_check_mark:', 'It is decidedly so. :white_check_mark:', 'Without a doubt. :white_check_mark:', 'Yes, definitely. :white_check_mark:', 'You may rely on it. :white_check_mark:', 'As I see it, yes. :white_check_mark:', 'Most likely. :white_check_mark:', ' Outlook good. :white_check_mark:', 'Yes. :white_check_mark:', 'Signs point to yes. :white_check_mark:', 'Reply hazy, try again. :large_orange_diamond: ', 'Ask again later. :large_orange_diamond: ', 'Better not tell you now. :large_orange_diamond: ', 'Cannot predict now. :large_orange_diamond: ', 'Concentrate and ask again. :large_orange_diamond: ', 'Do not count on it. :x:', 'My reply is no. :x:', 'My sources say no. :x:', 'Outlook not so good. :x:', 'Very doubtful. :x:']
+        color = discord.Color(value=0x00ff00)
+        em = discord.Embed(color=color, title=f"{message}")
+        em.description = random.choice(choices) 
+        em.set_author(name="The Mighty 8 ball", icon_url="https://vignette.wikia.nocookie.net/battlefordreamislandfanfiction/images/5/53/8-ball_my_friend.png/revision/latest?cb=20161109021012")
+        em.set_footer(text=f"Sent by {ctx.message.author.name}")
+        try:
+            await ctx.message.delete()
+        except discord.Forbidden:
+            pass
+        await ctx.send(embed=em)
+        
     
 @bot.command(name='eval', hidden=True)
 async def _eval(ctx, *, body):

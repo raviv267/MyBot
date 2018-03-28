@@ -32,6 +32,18 @@ async def on_ready():
 
     
 @bot.event
+async def on_message(message):
+    if message.guild.id == 372526440324923393:
+        pass
+    else:
+        if message.content.startswith("https://discord.gg/"):
+            await message.delete()
+            await ctx.send("Hey there! Don't advertise your servers in this one. :thumbsdown:", delete_after=5)
+        else:
+            pass
+    
+    
+@bot.event
 async def on_member_join(member):
     if member.guild.id == 403289272548851714:
         serverchannel = bot.get_channel(425376875553226753)

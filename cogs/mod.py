@@ -29,7 +29,7 @@ class Moderator:
             
     @commands.command()
     @commands.has_permissions(ban_members = True)
-    async def ban(self, ctx, user: discord.Member = Nonee):
+    async def ban(self, ctx, user: discord.Member = None):
         """Swings the mighty Ban Hammer on that bad boy."""
         if user is None:
             await ctx.send("To swing the ban hammer, use the command like this: \n*ban [@user] [days of msgs to delete] [reason]")

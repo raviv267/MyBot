@@ -4,7 +4,6 @@ import os
 import io
 import asyncio
 import json
-import ezjson
 import random
 from discord.ext import commands
 

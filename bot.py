@@ -89,6 +89,28 @@ async def invite(ctx):
     await ctx.send("Yay! thanks for adding me! -> https://discordapp.com/oauth2/authorize?client_id=428310138890223646&scope=bot&permissions=8")
 
 
+@bot.command()
+async def hack(ctx, user: discord.Member):
+    """Hack someone's account!"""
+    msg = await ctx.send(f"Currently hacking: **{user}**")
+    await asyncio.sleep(2)
+    await msg.edit(content="Please wait while we grab the information... [▓▓                  ]")
+    await asyncio.sleep(2)
+    await msg.edit(content="Please wait while we grab the information... [▓▓▓▓                ]")
+    await asyncio.sleep(2)
+    await msg.edit(content="Please wait while we grab the information... [▓▓▓▓▓▓              ]")
+    await asyncio.sleep(2)
+    await msg.edit(content="Please wait while we grab the information... [▓▓▓▓▓▓▓▓            ]")
+    await asyncio.sleep(2)
+    await msg.edit(content="Please wait while we grab the information... [▓▓▓▓▓▓▓▓▓▓          ]")
+    await asyncio.sleep(3)
+    await msg.edit(content="Please wait while we grab the information... [▓▓▓▓▓▓▓▓▓▓▓▓        ]")
+    await asyncio.sleep(3)
+    await msg.edit(content="Please wait while we grab the information... [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ]")
+    await asyncio.sleep(4)
+    await msg.edit(content=f"An error has occurred while hacking **{user}**. Please try again later. ❌") 
+
+    
 
 @bot.command()
 async def dogmeme(ctx):

@@ -63,5 +63,17 @@ class Moderator:
             await ctx.send("Couldn't unmute the user. Uh-oh...")
             
             
+    @commands.command()
+    @commands.has_permissions(manage_guild = True)
+    async def dm(self, ctx, user: discord.Member, *, msg: str):
+        """DM someone with ME. *dm [tag person] [msg]"""
+        try:
+            await user.send(msg)
+            await ctx.message.delete()            
+            await ctx.send(f"Your DM has reached **{user.name}**.:white_check_mark: ")
+        except:
+            await ctx.send("Error :x:. Make sure your message is shaped in this way: *dm [tag person] [msg]")
+            
+            
 def setup(bot): 
     bot.add_cog(Moderator(bot))    

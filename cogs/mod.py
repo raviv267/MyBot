@@ -44,7 +44,7 @@ class Moderator:
     @commands.command()
     @commands.has_permissions(ban_members=True)
     async def mute(self, ctx, user: discord.Member):
-        '''Forces someone to shut up. Usage: *mute [user] [time in mins]'''
+        '''Forces someone to shut up. Usage: *mute [user]'''
         try:
             await ctx.channel.set_permissions(user, send_messages=False)
             await ctx.send(f"**{user.name}**, it's time to shut up.")

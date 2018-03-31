@@ -34,8 +34,13 @@ class Fun:
         await asyncio.sleep(3)
         await msg.edit(content="Please wait while we grab the information... [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ]")
         await asyncio.sleep(4)
-        await msg.edit(content=f"An error has occurred while hacking **{user}**. Please try again later. :negative_squared_cross_mark:") 
-    
+        lol = random.randint(1, 2)
+        if lol == 1:
+            await msg.edit(content=f"An error has occurred while hacking **{user}**. Please try again later. :negative_squared_cross_mark:") 
+        if lol == 2:
+            await msg.edit(content=f"Success! **{user}**'s username and password has been sent to your DMs. :mailbox_with_mail: ")
+            await ctx.author.send("LMAO. Of course it wasn't a real hack. But hopefully, it trolled your friends real good!")
+            
         
     @commands.command()
     async def roast(self, ctx, user: discord.Member = None):

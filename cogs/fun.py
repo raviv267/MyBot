@@ -34,7 +34,7 @@ class Fun:
         await asyncio.sleep(3)
         await msg.edit(content="Please wait while we grab the information... [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    ]")
         await asyncio.sleep(4)
-        await msg.edit(content=f"An error has occurred while hacking **{user}**. Please try again later. ❌") 
+        await msg.edit(content=f"An error has occurred while hacking **{user}**. Please try again later. :negative_squared_cross_mark:") 
     
         
     @commands.command()
